@@ -1,0 +1,257 @@
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.form-control.numero {
+  width: 90px;
+}
+
+.form-control.w200 {
+  width: 200px;
+}
+
+.form-control {
+  max-width: 100%;
+}
+
+.form-control.w500 {
+  width: 650px;
+}
+
+.navBar {
+  background-color: #8baf8b !important;
+}
+
+.logo img {
+  width: auto;
+  height: 50px;
+}
+
+.pagina {
+  width: 100%;
+  overflow-x: auto;
+  height: 100%;
+}
+
+.linha {
+  width: auto;
+  padding: 5px;
+  height: 110px;
+  display: table;
+}
+
+.tile {
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin: 0 30px 0 0;
+  padding: 2px;
+}
+
+.verde {
+  background-color: #2e8b57;
+}
+
+.detailItemTitle {
+  font-size: 14px;
+}
+
+.detailItemContent {
+  font-size: 16px;
+}
+
+.detailItem {
+  margin: 16px;
+}
+
+.block-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-block {
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.image-block img {
+  width: 100%;
+  height: auto;
+}
+
+.navBar {
+  background-color: #2977a8;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.navBar img {
+  align-items: center;
+}
+
+.MuiList-root {
+  background-color: #2977a8;
+}
+
+.MuiList-root img {
+  width: 75px;
+}
+
+.MuiListItem-root {
+  color: #fff !important;
+  text-align: left;
+}
+
+.nounderline:link {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.imgLike {
+  height: 20px;
+  width: auto;
+}
+
+.userForm {
+  margin-left: 10px;
+}
+
+.Card {
+  position: auto;
+}
+
+ul.menu-bar {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  background: #2977a8;
+  border-bottom: 1px solid #2977a8;
+  border-top: 1px solid #889dda;
+}
+
+ul.menu-bar li {
+  display: inline-block;
+  margin: 0 16px;
+  padding: 16px 0;
+}
+
+ul.menu-bar li a {
+  color: #fff;
+}
+
+.card {
+  padding: 20px;
+  min-width: 300px;
+}
+
+.card {
+  padding: 20px !important;
+  min-width: 300px !important;
+  margin-top: 32px !important;
+}
+
+.rdt_TableFooter > span {
+  font-size: 0;
+}
+
+.rdt_TableFooter > span:first-child:before {
+  content: "Linhas por página";
+  font-size: 14px;
+}
+
+.user-page {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-page > div + div {
+  margin-left: 60px;
+}
+
+.user-page {
+  padding: 0 32px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 8px;
+  }
+}
+
+.MuiListItemText-inset {
+  padding: 0;
+  text-align: center;
+}
+
+.logout-link {
+  position: absolute;
+  right: 25px;
+  top: calc(50% - 17.5px);
+}
+
+.logout-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.navbar-container {
+  position: relative;
+}
+
+.sagi__dropdown-menu {
+  position: relative;
+}
+
+.sagi__dropdown-menu img {
+  width: 8px;
+  height: 8px;
+  margin-left: 8px;
+}
+
+.sagi__dropdown-menu span {
+  color: #fff;
+}
+
+.sagi__dropdown-menu > div {
+  width: 200px;
+  display: none;
+  text-align: left;
+  position: absolute;
+  padding: 16px;
+  background: #2977a8;
+  z-index: 2;
+  top: 100%;
+  left: -16px;
+}
+
+.sagi__dropdown-menu:hover > div {
+  display: block;
+}
