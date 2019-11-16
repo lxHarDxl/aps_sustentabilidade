@@ -255,3 +255,21 @@ ul.menu-bar li a {
 .sagi__dropdown-menu:hover > div {
   display: block;
 }
+
+.imglogo {
+  width: 40px !important;
+}
+
+.container-agua {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+ margin: auto;
+}
+
+.imposto-agua {
+ width: 49%;
+}
+.banho-agua {
+  width: 49%;
+}

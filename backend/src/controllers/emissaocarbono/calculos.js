@@ -27,7 +27,7 @@ exports.calculoDiesel = (req, res) => {
             req.query.quilometrosPorLitro,
         );
 
-        res.status(200).send({mesasge: `A emissão de carbono é de ${emissaoCarbono} KgCO²`})
+        res.status(200).send({mesasge: `A emissão de carbono é de ${emissaoCarbono} KgCO² em um veículo movido a diesel.`})
     } catch(e) {
         res.status(500).send({message: 'Falha interna.', error: e});
     }
@@ -42,7 +42,7 @@ exports.calculoGasolina = (req, res) => {
             req.query.quilometrosPorLitro,
         );
 
-        res.status(200).send({mesasge: `A emissão de carbono é de ${emissaoCarbono} KgCO²`})
+        res.status(200).send({mesasge: `A emissão de carbono é de ${emissaoCarbono} KgCO² em um veículo movido a gasolina.`})
     } catch(e) {
         res.status(500).send({message: 'Falha interna.', error: e});
     }
@@ -57,7 +57,7 @@ exports.calculoEtanol = (req, res) => {
             req.query.quilometrosPorLitro,
         );
 
-        res.status(200).send({mesasge: `A emissão de carbono é de ${emissaoCarbono} KgCO²`})
+        res.status(200).send({mesasge: `A emissão de carbono é de ${emissaoCarbono} KgCO² em um veículo movido a etanol.`})
     } catch(e) {
         res.status(500).send({message: 'Falha interna.', error: e});
     }

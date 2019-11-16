@@ -5,6 +5,7 @@ export class Papel extends Component {
   state = {
     tipoUnidade: "",
     txtPapel: "",
+    consumo: ""
   };
 
   handleChange = input => e => {
@@ -16,20 +17,22 @@ export class Papel extends Component {
     fetch(
       `http://localhost:3000/calculo/papel/${this.state.tipoUnidade}?${this.state.tipoUnidade}=${this.state.txtPapel}`,
       {
-        method: "POST",
+        method: "POST"
       }
     )
       .then(response => {
         if (!response.ok) {
           this.setState({
-            error: true,
+            error: true
           });
         } else {
           return response.json();
         }
       })
       .then(json => {
-        console.log(json);
+        this.setState({
+          consumo: json
+        });
       });
   }
 
@@ -39,6 +42,8 @@ export class Papel extends Component {
         <React.Fragment>
           <Card style={{ width: "50%", margin: "32px auto" }}>
             <Card.Body>
+            <p>Cálculo de reciclagem de papel:</p>
+
               <Form onSubmit={event => this.calcularPapel(event)}>
                 <Form.Row>
                   <Form.Group as={Col}>
@@ -64,7 +69,7 @@ export class Papel extends Component {
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridkmporlitro">
-                    <Form.Label>Insira a quantidade</Form.Label>
+                    <Form.Label>Insira a quantidade do papel a ser reciclado</Form.Label>
                     <Form.Control
                       type="text"
                       controlId="papel"
@@ -80,6 +85,11 @@ export class Papel extends Component {
               </Form>
             </Card.Body>
           </Card>
+          {this.state.consumo.message && (
+            <Card style={{ width: "50%", margin: "32px auto" }}>
+              <p> {this.state.consumo.message} </p>
+            </Card>
+          )}
         </React.Fragment>
       </div>
     );

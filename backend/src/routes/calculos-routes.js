@@ -19,4 +19,16 @@ router.post('/emissaocarbono/diesel', calculosEmissaoCarbono.calculoDiesel);
 router.post('/emissaocarbono/gasolina', calculosEmissaoCarbono.calculoGasolina);
 router.post('/emissaocarbono/etanol', calculosEmissaoCarbono.calculoEtanol);
 
+
+/**
+ * Rotiamento para cálculos de emissão de CO2
+ */
+
+const calculosAgua = require('../controllers/agua/calculos');
+
+router.post('/agua/caixa', calculosAgua.calculoloCaixa);
+router.post('/agua/banho', calculosAgua.calculoAguaBanho);
+
+
+
 module.exports = router;

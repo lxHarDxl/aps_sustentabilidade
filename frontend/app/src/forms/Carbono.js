@@ -6,6 +6,7 @@ export class Carbono extends Component {
     txtKmPorLitro: "",
     txtKM: "",
     tipoCombustivel: "",
+    consumo: ""
   };
 
   handleChange = input => e => {
@@ -17,20 +18,22 @@ export class Carbono extends Component {
     fetch(
       `http://localhost:3000/calculo/emissaocarbono/${this.state.tipoCombustivel}?quilometros=${this.state.txtKM}&quilometrosPorLitro=${this.state.txtKmPorLitro}`,
       {
-        method: "POST",
+        method: "POST"
       }
     )
       .then(response => {
         if (!response.ok) {
           this.setState({
-            error: true,
+            error: true
           });
         } else {
           return response.json();
         }
       })
       .then(json => {
-        console.log(json);
+        this.setState({
+          consumo: json
+        });
       });
   }
 
@@ -41,41 +44,42 @@ export class Carbono extends Component {
         <React.Fragment>
           <Card style={{ width: "50%", margin: "32px auto" }}>
             <Card.Body>
+            <p>Cálculo de emissão de carbono na atmosfera por veículos movidos a combustíveis fosséis:</p>
               <Form onSubmit={event => this.calcularCarbono(event)}>
                 <Form.Row>
-                  <Form.Group >
+                  <Form.Group>
                     <Form.Label>Tipo de combustivel</Form.Label>
-                      <Form.Check
-                        type="radio"
-                        label="Gasolina"
-                        name="tipoCombustivel"
-                        id="tipoCombustivel"
-                        onChange={this.handleChange("tipoCombustivel")}
-                        value="Gasolina"
-                      />
-                      <Form.Check
-                        type="radio"
-                        label="Etanol"
-                        name="tipoCombustivel"
-                        id="tipoCombustivel"
-                        onChange={this.handleChange("tipoCombustivel")}
-                        value="Etanol"
-                      />
-                      <Form.Check
-                        type="radio"
-                        label="Diesel"
-                        name="tipoCombustivel"
-                        id="tipoCombustivel"
-                        onChange={this.handleChange("tipoCombustivel")}
-                        value="Diesel"
-                      />
+                    <Form.Check
+                      type="radio"
+                      label="Gasolina"
+                      name="tipoCombustivel"
+                      id="tipoCombustivel"
+                      onChange={this.handleChange("tipoCombustivel")}
+                      value="Gasolina"
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="Etanol"
+                      name="tipoCombustivel"
+                      id="tipoCombustivel"
+                      onChange={this.handleChange("tipoCombustivel")}
+                      value="Etanol"
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="Diesel"
+                      name="tipoCombustivel"
+                      id="tipoCombustivel"
+                      onChange={this.handleChange("tipoCombustivel")}
+                      value="Diesel"
+                    />
                   </Form.Group>
                 </Form.Row>
 
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridkmporlitro">
                     <Form.Label>
-                      Insira a quantidade de quilometros por litro
+                      Insira a quantidade de quilometros por litro de perfomance do veículo
                     </Form.Label>
                     <Form.Control
                       type="text"
@@ -93,7 +97,7 @@ export class Carbono extends Component {
                     controlId="formGridkmporlitro"
                     onChange={this.handleChange("txtKM")}
                   >
-                    <Form.Label>Insira a distância a ser percorrida</Form.Label>
+                    <Form.Label>Insira a distância em quilômetros a ser percorrida</Form.Label>
                     <Form.Control type="text" placeholder="KM" />
                   </Form.Group>
                 </Form.Row>
@@ -103,6 +107,12 @@ export class Carbono extends Component {
               </Form>
             </Card.Body>
           </Card>
+
+          {this.state.consumo.mesasge && (
+            <Card style={{ width: "50%", margin: "32px auto" }}>
+              <p> {this.state.consumo.mesasge} </p>
+            </Card>
+          )}
         </React.Fragment>
       </div>
     );
